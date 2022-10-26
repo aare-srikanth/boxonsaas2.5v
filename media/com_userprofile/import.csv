@@ -1,0 +1,2 @@
+request-date,order-id,shipment-date,sku,fnsku,disposition,shipped-quantity,carrier,tracking-number,upc,rma-value
+03-10-2022,45875,03-10-2022,115522,55455,6456454,500,Amazon,55551,"	554	554785785",885475

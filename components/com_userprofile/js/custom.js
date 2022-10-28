@@ -246,5 +246,14 @@ function initPayPalButton() {
         
     }
     
+//warehoue collapse data
+$joomla(document).on('click','.panel-title',function() {
+    $joomla(".collapse").hide();
+   $joomla(this).parent().next().toggle();
+  
+   
+});
+
+
 
     

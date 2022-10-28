@@ -8,6 +8,7 @@
  */
 
 defined('_JEXEC') or die;
+error_reporting(0);
 
 $env = explode(".",$_SERVER['REQUEST_URI']);
 

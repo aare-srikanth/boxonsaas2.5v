@@ -298,24 +298,21 @@ h1.breadcrumb_title{font-size : 24px !important;}.cls-add-ico .btn-danger {font-
 .cupn-cde-lst-bg-gray{background-color:#f7f7f7;border: 1px solid #efe9e9;padding:0px 8px;border-radius: 5px;margin: 10px 0 0;}
 .wrhuse-grid {background-color: #919293!important;color: #fff;font-weight: bold;}
 .wrhuse-grid th{background-color: #919293!important;color: #fff;font-weight: bold;font-size: 12px;}
-.wrhuse-grid td{font-size:12px;border:1px solid #ccc;}
+.wrhuse-grid td{border:1px solid #ccc;}
 .whrse-link.label-success {background-color:#5cb85c;border-radius: 20px;padding: 5px 15px;color: #fff;font-weight: bold;}
 .repack-link.label-success {background-color:#5cb85c;border-radius: 20px;padding: 5px 15px;color: #fff;font-weight: bold;}
 .btn.btn-success.wrchild {background: #5cb85c !important;font-size: 30px;line-height: 0;padding: 0 0 4px 0 !important;border-radius: 4px !important;}
   .btn.btn-success.wrchild:focus {outline: none;}
 .action_btns .btn.btn-success.wrchild {height: 26px;width: 26px;}
 .even td {font-size: 12px;}
-.odd td {font-size: 12px;}
+.odd td {font-size: 12px;} 
 .expand_items.btn.btn-success {width: 26px;min-width: auto;height: 26px;margin: 0px 0 0 0;padding: 0 0 5px 0px;font-size: 30px;line-height: 0;vertical-align: middle;background: #5cb85c;border: 1px solid #5cb85c;}
 .wrhuse-grid {background-color: #919293!important;color: #fff;font-weight: bold;}
 .wrhuse-grid th{background-color: #919293!important;color: #fff;font-weight: bold;font-size: 12px;}
-.wrhuse-grid td{font-size:12px;border:1px solid #ccc;}
 .whrse-link.label-success {background-color:#5cb85c;border-radius: 20px;padding: 5px 15px;color: #fff;font-weight: bold;}
 .btn.btn-success.wrchild {background: #5cb85c !important;font-size: 30px;line-height: 0;padding: 0 0 4px 0 !important;border-radius: 4px !important;}
   .btn.btn-success.wrchild:focus {outline: none;}
 .action_btns .btn.btn-success.wrchild {height: 26px;width: 26px;}
-.even td {font-size: 12px;}
-.odd td {font-size: 12px;}
 .expand_items.btn.btn-success {width: 26px;min-width: auto;height: 26px;margin: 0px 0 0 0;padding: 0 0 5px 0px;font-size: 30px;line-height: 0;vertical-align: middle;background: #5cb85c;border: 1px solid #5cb85c;}
 .paypalCreditDebit {display: block;margin: 26px auto;padding: 0;}
 .wrhsListDiv{margin-top: 10px;}
@@ -484,13 +481,26 @@ table.shipping-costtbl{margin-bottom:30px;}
 .inhouse_paynow a.label-warning {background-color: #ffc107;border-radius: 20px;padding: 5px 15px;color: #333;font-weight: bold;}
 .inhouse_paynow a.label-success {background-color: #5cb85c;border-radius: 20px;padding: 5px 15px;color: #fff;font-weight: bold;}
 .completeDetails{ cursor:pointer;color:#23bbed; }
+
+/*ui enhancement 2.6 css start*/
+.theme_table thead tr th {white-space: inherit !important;}
+.theme_table tbody tr td {white-space: nowrap;}
+.table-responsive{width: 100%;}
+/*ui enhancement 2.6 css end*/
+
 /* Responsive Start  */
+@media (max-width:1180px) {
+	.dash_option_blck h5 {font-size: 14px !important;}
+	.dash_panel .user_info .panel address span.user_num {font-size: 15px !important;}
+}
 @media (max-width:1024px) {
 .footer_logo { padding: 50px 30px; }
 .footer_top .sm-blk img, .footer_top li span img { width: 28px; }
 .footer_top li, .footer_top li a span { font-size: 14px; }
 .footer .footer_top .cpy-rgt p { font-size: 12px; }
 .pp_load span{left:28%;}
+.dash_panel .user_info .panel address span.user_num {font-size: 15px;}
+.dash_option_blck h5 {font-size: 14px !important;}
 }
 
 @media (max-width: 991px) {
@@ -509,6 +519,7 @@ header .theme_nav{padding:0px 0;}
 .lang_menu{margin-top:0;}
 .collapse.in { display: block !important; }
 .pp_load span{left:20%;}
+.profilepic_address {min-height: 400px !important;}
 }
  @media (max-width: 768px) {
 header .theme_nav .navbar-nav { margin: 0; }
@@ -543,6 +554,7 @@ input.cls-email { width: 50%; }
 .footer .footer_top h4{font-size:14px !important;}
 .footer .footer_top p{font-size:14px !important;}
 .footer_top li{font-size:14px !important;}
+.profilepic_address {min-height: 400px !important;}
  }
 
 .footer_logo {padding: 1px 30px;}
@@ -580,7 +592,9 @@ header .theme_nav .navbar-header img {height: 48px;position:relative;top:13px;}
 .rdo_rd1 {margin: 0 auto;display: table;width: auto !important;}
 .pp_load span{left:1%;}
 .row-odd span {font-weight: bold;font-size: 14px;}
-.row-even span {font-weight: bold;font-size: 14px;}}
+.row-even span {font-weight: bold;font-size: 14px;}
+.profilepic_address {min-height: 630px !important;}
+}
 @media (max-width:468px) {
 .footer_top .cls-fmenu li, .footer_top .cls-fmenu li a { clear: both; display: inline-block; }
 	.shp-blk1.quot-shiprates table {text-align:right;}

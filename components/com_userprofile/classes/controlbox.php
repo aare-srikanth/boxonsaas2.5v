@@ -1,3 +1,5 @@
+
+    
 <?php
  
 /**
@@ -5883,17 +5885,31 @@ if($priceStr != ""){
 		$result=curl_exec($ch);
 		$msg=json_decode($result);
 		
-		$wrhsDetCont = "<table class='table table-bordered theme_table'>";
-        foreach($msg->Data as $wrhsDet){
-            $wrhsDetCont .= "<tr style='color:#d9534f'><td><strong>Warehouse No</strong> </td><td>".$wrhsDet->BillFormno."</td></tr>";
-            $wrhsDetCont .= "<tr><td><strong>Quantity Received</strong> </td><td>".$wrhsDet->QtReceived."</td></tr>";
-            $wrhsDetCont .= "<tr><td><strong>Quantity Shipped </strong></td><td>".$wrhsDet->QtShipped."</td></tr>";
-            $wrhsDetCont .= "<tr><td><strong>Quantity Rejected </strong></td><td>".$wrhsDet->QtRejected."</td></tr>";
-            $wrhsDetCont .= "<tr><td><strong>Quantity Delivered</strong> </td><td>".$wrhsDet->QtDeliverd."</td></tr>";
-            $wrhsDetCont .= "<tr><td><strong>Quantity On Hand</strong></td><td>".$wrhsDet->QtOnhand."</td></tr>";
-            $wrhsDetCont .= "<tr><td><strong>Status</strong></td><td>".$wrhsDet->Status."</td></tr>";
-        }
-        $wrhsDetCont .= "</table>";
+		// $wrhsDetCont = "<table class='table table-bordered theme_table'>";
+        
+        
+        // foreach($msg->Data as $wrhsDet){
+        //     $wrhsDetCont .= "<tr style='color:#d9534f'><td><strong>Warehouse No</strong> </td><td>".$wrhsDet->BillFormno."</td></tr>";
+        //     $wrhsDetCont .= "<tr><td><strong>Quantity Received</strong> </td><td>".$wrhsDet->QtReceived."</td></tr>";
+        //     $wrhsDetCont .= "<tr><td><strong>Quantity Shipped </strong></td><td>".$wrhsDet->QtShipped."</td></tr>";
+        //     $wrhsDetCont .= "<tr><td><strong>Quantity Rejected </strong></td><td>".$wrhsDet->QtRejected."</td></tr>";
+        //     $wrhsDetCont .= "<tr><td><strong>Quantity Delivered</strong> </td><td>".$wrhsDet->QtDeliverd."</td></tr>";
+        //     $wrhsDetCont .= "<tr><td><strong>Quantity On Hand</strong></td><td>".$wrhsDet->QtOnhand."</td></tr>";
+        //     $wrhsDetCont .= "<tr><td><strong>Status</strong></td><td>".$wrhsDet->Status."</td></tr>";
+        // }
+        // $wrhsDetCont .= "</table>";
+        $wrhsDetCont='<div class="panel-group">
+        <div class="panel panel-primary">
+          <div class="panel-heading" data-toggle="collapse" href="#collapse1">
+            <h4 class="panel-title">
+              <a >Warehouse No</a>
+            </h4>
+          </div>
+          <div id="collapse1" class="panel-collapse collapse">
+            <div class="panel-body">Panel Body</div>
+          </div>
+        </div>
+      </div>';
         
        
         return $wrhsDetCont;
@@ -5904,3 +5920,4 @@ if($priceStr != ""){
     
     
 } 
+

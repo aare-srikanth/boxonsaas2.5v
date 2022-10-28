@@ -236,17 +236,27 @@ $joomla(function() {
 
 
 <style>
-.branch_section {
-	margin-top: 20px;
-}
+.branch_section {margin-top: 20px;}
+/*ui enhancement 2.6 css start*/
 	.prof-pic-blk1{text-align: center;}
-	.prof-pic-blk1 img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    border: 1px solid #f2f2f2;
-    background: #f2f2f2;
-}
+	.prof-pic-blk1 img {width: 180px;height: 180px;border-radius: 50%;border: 1px solid #f2f2f2;background: #f2f2f2;}
+.dfult-chck {font-size: 18px;text-align: left;}
+.profilepic_address{min-height: 800px;}
+.dash_panel .user_info .panel h4 {margin: 16px 0 10px;}
+.dash_panel .user_info .panel address {line-height: 34px;}
+.dash_option_blck h5 {font-size: 16px;}
+.dash_option_blck img {width: 50px;}
+.prof-pic-blk1 {text-align: left;}
+.prof-pic-blk1 img {margin: 0 auto;display: block;}
+.edit-ico {display: none;}
+.prof-pic-blk1 .labelFile {border-radius: 4px;text-align: center;padding: 2px 46px;margin: 2px;background: transparent;display: inline-block;}
+.labelFile input[type=file] {display: none;}
+.labelFile .btn {border: none;color: #fff;}
+.prof-pic-blk1:hover .edit-ico i {text-align: center;text-align: center;font-size: 30px;display: block;padding-top: 100px;color: #fff;display: block;cursor: pointer;padding-left:0px;}
+.prof-pic-blk1:hover .edit-ico {width: 180px;height: 180px;border-radius: 50%;border: 1px solid #f2f2f2;margin: 16px auto;display: block;display: block;background: rgba(0,0,0,0.5) !important;z-index: 999999;position: absolute;top: 0;left: 70px;z-index: 0;}
+.address_section{padding: 0;}
+/* .labelFile input[type=file]:hover {display: block;} */
+/*ui enhancement 2.6 css end*/
 </style>
 
 <div class="container">
@@ -254,11 +264,118 @@ $joomla(function() {
     <div class="main_heading"><?php echo Jtext::_('COM_USERPROFILE_DASHBOARD_TITLE');?></div>
     <div class="panel-body">
       <h3 class="dash_head"><?php echo Jtext::_('COM_USERPROFILE_DASHBOARD_WELCOME');?> <?php echo $UserView->UserName;?>!</h3>
-      <div class="row user_info">
-        <div class="col-md-9 col-sm-8">           
+	  <div class="row">
+      <div class="user_info">
+	          <div class="col-md-4 col-sm-12 profilepic_address">
+			   
+		   <!--Dashboard leftside section start--> 
+  <div class="panel panel-default col-md-12 col-sm-12">           
+          <!--Confirm alert box-->           
+          <!-- Modal popup start -->
+          <div class="modal fade" id="branchConfirm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenterTitle"></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                </div>
+                <div class="modal-body"> <?php echo Jtext::_('COM_USERPROFILE_CHANGE_DEFAULT_ADDRESS_ALERT');?> </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal"><?php echo Jtext::_('COM_USERPROFILE_CHANGE_DEFAULT_ADDRESS_NO');?></button>
+                  <button type="button" class="btn btn-primary"><?php echo Jtext::_('COM_USERPROFILE_CHANGE_DEFAULT_ADDRESS_YES');?></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!--Modal popup end-->
+		   <!--Profilepic start-->
+		  <div class="col-md-12 col-sm-4">
+          <div class="panel-body prof-pic-blk1">
+              <?php 
+					if($UserViews->imagePath){
+				?>
+              <img src="<?php echo str_replace('https:','http:',$UserViews->imagePath);?>">
+              <?php 
+                            }else{
+                        ?>
+              <img src="<?php echo JURI::base().'/images/default_profile_pic.png'; ?>">
+              <?php 
+                           }
+                        ?>
+						<div class="edit-ico">
+                    <label class="labelFile">
+                      <input type="file" required="">
+                      <span class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></span> </label>
+                  </div>
+            </div>
+			</div>
+			<!--Profilepic end-->
+			
+			<!--Address section start--> 
+          <div class="col-md-12 col-sm-8 address_section">     
+			<div class="row">
+            <!-- get all the existing branches  -->            
+            <div class="branch_section">
+              <div class="col-md-12 col-sm-12 col-xs-12" style="">
+                <label><?php echo Jtext::_('COM_USERPROFILE_DASHBOARD_BRANCH_TEXT');?>  </label>
+                <select id="exBranch" class="form-control" name="exBranch">
+                  <option selected value="<?php echo  '0:'.$UserView->Address1.':'.$UserView->Address2,':'.$UserView->City.':'.$UserView->State.':'.$UserView->Country.':'.$UserView->PostalCode.':'.$UserView->PhoneCell; ?>">Select Branch</option>
+                  <?php  
+			          
+    			            foreach($getBranches as $branch){
+    			                /*
+    			                0->BranchCode;
+    			                1->Address1
+    			                2->Address2
+    			                3->City
+    			                4->State
+    			                5->Country
+    			                6->PostalCode
+    			                7->PhoneCell
+    			                */
+    			                $branchVal = $branch->BranchCode.":".$branch->Address1.":".$branch->Address2.":".$branch->City.":".$branch->State.":".$branch->Country.":".$branch->PostalCode.":".$branch->PhoneCell;
+    			        ?>
+                  <option value="<?php echo $branchVal; ?>" <?php if($UserView->BranchCode == $branch->BranchCode ){ echo 'selected';} ?> ><?php echo $branch->BranchName; ?></option>
+                  <?php
+                        
+                            }
+                        ?>
+                </select>
+              </div>
+			   <div class="col-md-12 col-sm-12 col-xs-12 dfult-chck">
+				   <label>&nbsp;</label>
+                <input type="checkbox" name="defaultBranch" id="defaultBranch">
+               <?php echo Jtext::_('COM_USERPROFILE_DASHBOARD_DEFAULT_ADDRESS');?>  
+			  </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="panel-body">
+              <h4><?php echo Jtext::_('COM_USERPROFILE_DASHBOARD_SHIPMENT_ADDRESS');?></h4>
+              <address>
+              <span class="name user_name1"><?php echo $UserView->UserName;?></span>  <span class="user_num"> <?php echo strtoupper($user);?></span><br>
+              <span class="userAdd1"><?php echo str_replace(",","",strtoupper($UserView->Address1)).'</span>';?><br> <?php if(!empty($UserView->Address2)){ echo '<span class="userAdd2">'.str_replace(",","",strtoupper($UserView->Address2)).'</span> ,<br>'; } ?>
+              <span class="userCity"><?php echo $UserView->City;?></span>,&nbsp; <span class="userState"><?php echo $UserView->State;?></span>,&nbsp;
+              <span class="userCountry"><?php echo $UserView->Country;?></span>&nbsp;- &nbsp;<span class="userPostalCode"><?php echo $UserView->PostalCode.'</span><br>';?> 
+			  <span class="userPhone">
+              <?php if($UserView->PhoneCell) echo 'PHONE : '.$UserView->PhoneCell.'<br>';?>
+              </span>
+              <?php //if($UserView->PhoneFax) echo 'Fax : '.$UserView->PhoneFax.'<br>';?>
+              </address>
+             
+              <div class="row col-md-12" style="display:none;">
+                <input type="button" class="btn btn-primary" name="updateBranch" id="updateBranch" value="Update">
+              </div>
+            </div>
+          </div>
+		  </div>
+        </div>
+        </div>
+      </div>
+        <!-- <div class="col-md-4 col-sm-4">           
           <!--Confirm alert box-->           
           <!-- Modal -->
-          <div class="modal fade" id="branchConfirm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+           <!--<div class="modal fade" id="branchConfirm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -276,9 +393,9 @@ $joomla(function() {
           
           <!--End-->
           
-          <div class="panel panel-default">             
+          <!-- <div class="panel panel-default">             
             <!-- get all the existing branches  -->            
-            <div class="branch_section">
+             <!--<div class="branch_section">
               <div class="col-md-6 col-sm-6 col-xs-12" style="">
                 <label><?php echo Jtext::_('COM_USERPROFILE_DASHBOARD_BRANCH_TEXT');?>  </label>
                 <select id="exBranch" class="form-control" name="exBranch">
@@ -330,8 +447,8 @@ $joomla(function() {
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-3 col-sm-4 prof-pic-blk1">
+        </div>-->
+       <!-- <div class="col-md-3 col-sm-4 prof-pic-blk1">
           <div class="panel panel-default">
             <div class="panel-body">
               <?php 
@@ -347,10 +464,14 @@ $joomla(function() {
                         ?>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="row usr_shipping">
-        <div class="col-sm-12">
+        </div>-->
+    <!--Address section end--> 
+	 <!--Dashboard leftside section end--> 
+	 
+	 <!--Dashboard rightside section start-->
+	<div class="col-md-8 col-sm-12">
+      <div class="usr_shipping">
+        <div class="">
           <div class="panel panel-default">
             <div class="panel-heading"> <?php echo Jtext::_('COM_USERPROFILE_DASHBOARD_SHIPMENT');?> </div>
             <div class="panel-body">
@@ -405,8 +526,8 @@ $joomla(function() {
           </div>
         </div>
       </div>
-      <div class="row usr_account">
-        <div class="col-sm-12">
+      <div class="usr_account">
+        <div class="">
           <div class="panel panel-default">
             <div class="panel-heading"> <?php echo Jtext::_('COM_USERPROFILE_DASHBOARD_ACCOUNT_SUMMARY');?> </div>
             <div class="panel-body">
@@ -451,8 +572,8 @@ $joomla(function() {
           </div>
         </div>
       </div>
-      <div class="row usr_profile">
-        <div class="col-sm-12">
+       <!--  <div class="usr_profile">
+        <div class="">
           <div class="panel panel-default">
             <div class="panel-heading"> <?php echo Jtext::_('COM_USERPROFILE_DASHBOARD_MY_PROFILE');?> </div>
             <div class="panel-body">
@@ -480,12 +601,12 @@ $joomla(function() {
             </div>
           </div>
         </div>
-      </div>
+      </div>-->
       
        <?php   if($dynpage["PickUpOrder"][1]=="ACT" && $dynpage["Quotation"][1]=="ACT"){ ?>
      
-      <div class="row usr_orders">
-        <div class="col-sm-12">
+      <div class="usr_orders">
+        <div class="">
           <div class="panel panel-default">
             <div class="panel-heading"> <?php echo Jtext::_('COM_USERPROFILE_DASHBOARD_ORDERS');?> </div>
             <div class="panel-body">
@@ -520,8 +641,8 @@ $joomla(function() {
       
       <?php } ?>
     
-      <div class="row usr_settings">
-        <div class="col-sm-12">
+      <div class="usr_settings">
+        <div class="">
           <div class="panel panel-default">
             <div class="panel-heading"> <?php echo Jtext::_('COM_USERPROFILE_SETTINGS');?> </div>
             <div class="panel-body">
@@ -555,5 +676,9 @@ $joomla(function() {
         </div>
       </div>
     </div>
+	<!--Dashboard rightside section end-->
+	</div>
   </div>
-</div>
+  </div>
+  </div>
+  <!--</div>-->

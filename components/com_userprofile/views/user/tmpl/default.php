@@ -238,23 +238,28 @@ $joomla(function() {
 <style>
 .branch_section {margin-top: 20px;}
 /*ui enhancement 2.6 css start*/
-	.prof-pic-blk1{text-align: center;}
+	.prof-pic-blk1{text-align: center; padding:0;}
+  .profile_sectn{padding: 0;}
 	.prof-pic-blk1 img {width: 180px;height: 180px;border-radius: 50%;border: 1px solid #f2f2f2;background: #f2f2f2;}
 .dfult-chck {font-size: 18px;text-align: left;}
 .profilepic_address{min-height: 800px;}
-.dash_panel .user_info .panel h4 {margin: 16px 0 10px;}
+.dash_panel .user_info .panel h4 {margin: 5px 0 10px;}
 .dash_panel .user_info .panel address {line-height: 34px;}
 .dash_option_blck h5 {font-size: 16px;}
 .dash_option_blck img {width: 50px;}
 .prof-pic-blk1 {text-align: left;}
-.prof-pic-blk1 img {margin: 0 auto;display: block;}
+.prof-pic-blk1 img {margin: 10px auto;display: block;}
 .edit-ico {display: none;}
 .prof-pic-blk1 .labelFile {border-radius: 4px;text-align: center;padding: 2px 46px;margin: 2px;background: transparent;display: inline-block;}
 .labelFile input[type=file] {display: none;}
 .labelFile .btn {border: none;color: #fff;}
 .prof-pic-blk1:hover .edit-ico i {text-align: center;text-align: center;font-size: 30px;display: block;padding-top: 100px;color: #fff;display: block;cursor: pointer;padding-left:0px;}
-.prof-pic-blk1:hover .edit-ico {width: 180px;height: 180px;border-radius: 50%;border: 1px solid #f2f2f2;margin: 16px auto;display: block;display: block;background: rgba(0,0,0,0.5) !important;z-index: 999999;position: absolute;top: 0;left: 70px;z-index: 0;}
+.prof-pic-blk1:hover .edit-ico {width: 180px;height: 180px;border-radius: 50%;border: 1px solid #f2f2f2;margin: 10px auto;display: block;display: block;background: rgba(0,0,0,0.5) !important;z-index: 999999;position: absolute;top: 0;left: 70px;z-index: 0;}
 .address_section{padding: 0;}
+.dash_panel h3.dash_head {font-size: 20px !important;}
+.dash_panel h3.dash_head {margin: 18px 0 0;padding: 12px;}
+..page_content .main_panel .main_heading{padding: 15px 0 15px !important;}
+.prof-pic-blk1 h3{font-size:20px;text-align:center;}
 /* .labelFile input[type=file]:hover {display: block;} */
 /*ui enhancement 2.6 css end*/
 </style>
@@ -263,7 +268,7 @@ $joomla(function() {
   <div class="main_panel dash_panel">
     <div class="main_heading"><?php echo Jtext::_('COM_USERPROFILE_DASHBOARD_TITLE');?></div>
     <div class="panel-body">
-      <h3 class="dash_head"><?php echo Jtext::_('COM_USERPROFILE_DASHBOARD_WELCOME');?> <?php echo $UserView->UserName;?>!</h3>
+      <!-- <h3 class="dash_head"><?php echo Jtext::_('COM_USERPROFILE_DASHBOARD_WELCOME');?> <?php echo $UserView->UserName;?>!</h3> -->
 	  <div class="row">
       <div class="user_info">
 	          <div class="col-md-4 col-sm-12 profilepic_address">
@@ -290,7 +295,7 @@ $joomla(function() {
           
           <!--Modal popup end-->
 		   <!--Profilepic start-->
-		  <div class="col-md-12 col-sm-4">
+		  <div class="col-md-12 col-sm-4 profile_sectn">
           <div class="panel-body prof-pic-blk1">
               <?php 
 					if($UserViews->imagePath){
@@ -303,6 +308,7 @@ $joomla(function() {
               <?php 
                            }
                         ?>
+                        <h3><?php echo Jtext::_('COM_USERPROFILE_DASHBOARD_WELCOME');?> <?php echo $UserView->UserName;?>!</h3>
 						<div class="edit-ico">
                     <label class="labelFile">
                       <input type="file" required="">
@@ -344,7 +350,7 @@ $joomla(function() {
                 </select>
               </div>
 			   <div class="col-md-12 col-sm-12 col-xs-12 dfult-chck">
-				   <label>&nbsp;</label>
+				  
                 <input type="checkbox" name="defaultBranch" id="defaultBranch">
                <?php echo Jtext::_('COM_USERPROFILE_DASHBOARD_DEFAULT_ADDRESS');?>  
 			  </div>

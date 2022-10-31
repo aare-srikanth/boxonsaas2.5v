@@ -23,7 +23,32 @@ $user=$session->get('user_casillero_id');
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 -->  
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+<script>
+	 var $joomla = jQuery.noConflict(); 
+	//warehoue collapse data
+$joomla(document).on('click','.panel-title',function() {
+    $joomla('.expand').html('+');
+    // $joomla(this).find(".expand").html();
+    var expn =   $joomla(this).find(".expand").html();
+    // alert(expn);
+    if(expn == '+'){
+        $joomla(this).find(".expand").html('-');
+    }
+   else{
+    $joomla(this).find(".expand").html('+');
+   }
 
+    $joomla(".panel-collapse").eq(0).addClass("collapse");
+    var numItems = $joomla(".panel-title").length;
+    if(numItems > 0){
+        $joomla(".collapse").hide();
+        $joomla(this).parent().next().toggle();
+    }else{
+       $joomla(this).parent().next().toggle();
+    }
+
+});
+</script>
 <div class="container">
 	<div class="main_panel persnl_panel">
 	    
@@ -63,26 +88,66 @@ $user=$session->get('user_casillero_id');
                }
                
                $config = JFactory::getConfig();
+			   
+
+			   $ntfTitle="";
                
                foreach($mainPageDetails as $data){
-                    $str = '$id';
-                   echo '<div id="'.$data->$str.'" class="ntifiction-info" id="notification"><h4>'.$data->Heading.'</h4>';
+
+				$doc = new DOMDocument();
+				$doc->loadHTML($data->Content);
+				$tags = $doc->getElementsByTagName('img');
+				
+				foreach ($tags as $tag) {
+					$oldSrc = $tag->getAttribute('src');
+					$newScrURL = $config->get('backend_url').$oldSrc;
+					$tag->setAttribute('src', $newScrURL);
+					$tag->setAttribute('data-src', $oldSrc);
+				} 
+				
+				$htmlString = $doc->saveHTML();
+				// echo '<p>'.$htmlString.'</p></div>';
+
+                //  $str = '$id';
+                 //echo '<div id="'.$data->$str.'" class="ntifiction-info" id="notification"><h4>'.$data->Heading.'</h4>';
+				  $ntfTitle.='<div class="panel-group">
+      
+				  <div class="panel panel-primary">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a>'.$data->Heading.'</a><span class="expand" style="float:right">+</span>
+					  </h4>
+					</div>
+					<div id="test" class="panel-collapse collapse">
+					  <div class="panel-body"> 
+					  <p>'.$htmlString.'</p>
+					</div>
+					</div>
+				  </div>
+				
+				</div>';
+				// echo  $ntfTitle;
+			   }
+			   echo  $ntfTitle;
+				   //  <div class="panel-collapse collapse">
+			
                    
-                        $doc = new DOMDocument();
-                        $doc->loadHTML($data->Content);
-                        $tags = $doc->getElementsByTagName('img');
+                        // $doc = new DOMDocument();
+                        // $doc->loadHTML($data->Content);
+                        // $tags = $doc->getElementsByTagName('img');
                         
-                        foreach ($tags as $tag) {
-                            $oldSrc = $tag->getAttribute('src');
-                            $newScrURL = $config->get('backend_url').$oldSrc;
-                            $tag->setAttribute('src', $newScrURL);
-                            $tag->setAttribute('data-src', $oldSrc);
-                        } 
+                        // foreach ($tags as $tag) {
+                        //     $oldSrc = $tag->getAttribute('src');
+                        //     $newScrURL = $config->get('backend_url').$oldSrc;
+                        //     $tag->setAttribute('src', $newScrURL);
+                        //     $tag->setAttribute('data-src', $oldSrc);
+                        // } 
                         
-                        $htmlString = $doc->saveHTML();
-                        echo '<p>'.$htmlString.'</p></div>';
+                        // $htmlString = $doc->saveHTML();
+                        // echo '<p>'.$htmlString.'</p></div>';
                     
-               }
+               
+			   
                ?>
 		               
 		               

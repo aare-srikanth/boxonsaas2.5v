@@ -4327,16 +4327,17 @@
          <div class="modal-content">
             <div class="modal-header">
                <h4 class="modal-title"><strong><?php echo Jtext::_('Warehouse Details');  ?></strong></h4>
+               <i class="fa fa-times" aria-hidden="true"   data-dismiss="modal" ></i>
             </div>
             <div class="modal-body2"></div>
             <div class="modal-body">
-               <div class="row col-md-12 form-group wrhsDetBody" >
+               <div class="col-md-12 form-group wrhsDetBody" >
                   
                </div>
                <div class="row">
-                  <div class="col-sm-12 text-center">
-                     <input type="button" value="<?php echo Jtext::_('Close');  ?>" data-dismiss="modal" class="btn btn-danger">
-                  </div>
+                  <!-- <div class="col-sm-12 text-center">
+                     <input type="button"class="btn btn-danger">
+                  </div> -->
                </div>
                
             </div>
@@ -5436,6 +5437,7 @@ $joomla(document).on('click','.whrse-link',function() {
                 success: function(data){
                     $joomla(".page_loader").hide();
                     $joomla(".wrhsDetBody").html(data);
+                    $joomla(".panel-collapse").eq(0).removeClass("collapse");
                     $joomla("#wrhsDetails").modal("show");
                  
                 }

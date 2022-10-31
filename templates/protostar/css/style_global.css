@@ -319,6 +319,9 @@ h1.breadcrumb_title{font-size : 24px !important;}.cls-add-ico .btn-danger {font-
 .unpackwrhs{margin: 1px 8px 0 !important;vertical-align: middle;}
 .error-msg{color: #EC1B24;}
 .wrhsListDiv label {font-size: 12px;}
+.modal-md .modal-title{float:left;}
+.modal-md .fa-times{float: right;margin: 4px 5px;color: #a5a5a5;font-size: 16px; cursor: pointer;}
+.wrhsDetBody{padding: 0;}
 /* orderprocess pages CSS end */
 
 /*Inventry pre alert css start*/

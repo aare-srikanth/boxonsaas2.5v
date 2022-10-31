@@ -5463,6 +5463,7 @@ $joomla(document).on('click','.repack-link',function() {
                     $joomla(".page_loader").hide();
                     $joomla(".wrhsDetBody").html(data);
                     $joomla(".panel-collapse").eq(0).removeClass("collapse");
+                    $joomla(".expand:first").html('-');
                     $joomla("#wrhsDetails").modal("show");
                  
                 }

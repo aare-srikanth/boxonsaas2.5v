@@ -5445,6 +5445,7 @@ $joomla(document).on('click','.whrse-link',function() {
 });
 
 $joomla(document).on('click','.repack-link',function() {
+   
     $joomla(".wrhsDetBody").html("");
     var wrhsno = $joomla(this).attr("data-val");
     
@@ -5461,6 +5462,7 @@ $joomla(document).on('click','.repack-link',function() {
                 success: function(data){
                     $joomla(".page_loader").hide();
                     $joomla(".wrhsDetBody").html(data);
+                    $joomla(".panel-collapse").eq(0).removeClass("collapse");
                     $joomla("#wrhsDetails").modal("show");
                  
                 }

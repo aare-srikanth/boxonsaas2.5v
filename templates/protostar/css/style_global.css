@@ -489,6 +489,9 @@ table.shipping-costtbl{margin-bottom:30px;}
 .wrhsDetBody .panel-heading {cursor: pointer;}
 .wrhsDetBody a:hover{text-decoration: none;}
 /*ui enhancement 2.6 css end*/
+.wrhsDetBody .panel-title{
+	cursor: pointer;
+}
 
 /* Responsive Start  */
 @media (max-width:1180px) {

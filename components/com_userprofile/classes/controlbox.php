@@ -5884,9 +5884,10 @@ if($priceStr != ""){
         curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
 		$result=curl_exec($ch);
 		$msg=json_decode($result);
-		
-		   foreach($msg->Data as $wrhsDet){
-      $wrhsDetCont='<div class="panel-group">
+
+        $wrhsDetCont = "";
+	foreach($msg->Data as $wrhsDet){
+      $wrhsDetCont.='<div class="panel-group">
       
       <div class="panel panel-primary">
         <div class="panel-heading">
@@ -5894,7 +5895,7 @@ if($priceStr != ""){
             <a>'.$wrhsDet->BillFormno.'</a>
           </h4>
         </div>
-        <div class="panel-collapse collapse">
+        <div id="test" class="panel-collapse collapse">
           <div class="panel-body"> 
           <table class="table table-bordered theme_table">
          <tr><td><strong>Quantity Received</strong> </td><td>'.$wrhsDet->QtReceived.'</td></tr>
@@ -5909,7 +5910,7 @@ if($priceStr != ""){
       </div>
     
     </div>';
-      }
+      } //  <div class="panel-collapse collapse">
   return $wrhsDetCont;
 
 

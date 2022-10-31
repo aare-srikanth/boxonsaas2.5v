@@ -248,11 +248,18 @@ function initPayPalButton() {
     
 //warehoue collapse data
 $joomla(document).on('click','.panel-title',function() {
-    $joomla(".collapse").hide();
-   $joomla(this).parent().next().toggle();
-  
-   
+    $joomla(".panel-collapse").eq(0).addClass("collapse");
+    var numItems = $joomla(".panel-title").length;
+    if(numItems > 0){
+        $joomla(".collapse").hide();
+        $joomla(this).parent().next().toggle();
+    }else{
+       $joomla(this).parent().next().toggle();
+    }
+
 });
+
+
 
 
 

@@ -248,15 +248,15 @@ function initPayPalButton() {
     
 //warehoue collapse data
 $joomla(document).on('click','.panel-title',function() {
-    $joomla('.expand').html('+');
+    $joomla('.panel-title span').attr('class','expandPlus');
     // $joomla(this).find(".expand").html();
-    var expn =   $joomla(this).find(".expand").html();
+    var expn =   $joomla(this).find("#expand").attr("class");
     // alert(expn);
-    if(expn =='+'){
-        $joomla(this).find(".expand").html('-');
+    if(expn =='expandPlus'){
+        $joomla(this).find("#expand").attr('class','expandMinus');
     }
    else{
-    $joomla(this).find(".expand").html('+');
+    $joomla(this).find("#expand").attr('class','expandPlus');
    }
 
     $joomla(".panel-collapse").eq(0).addClass("collapse");
@@ -269,6 +269,29 @@ $joomla(document).on('click','.panel-title',function() {
     }
 
 });
+
+// $joomla(document).on('click','.panel-title',function() {
+//     $joomla('.expand').html('+');
+//     // $joomla(this).find(".expand").html();
+//     var expn =   $joomla(this).find(".expand").html();
+//     // alert(expn);
+//     if(expn =='+'){
+//         $joomla(this).find(".expand").html('-');
+//     }
+//    else{
+//     $joomla(this).find(".expand").html('+');
+//    }
+
+//     $joomla(".panel-collapse").eq(0).addClass("collapse");
+//     var numItems = $joomla(".panel-title").length;
+//     if(numItems > 0){
+//         $joomla(".collapse").hide();
+//         $joomla(this).parent().next().toggle();
+//     }else{
+//        $joomla(this).parent().next().toggle();
+//     }
+
+// });
 
 
 

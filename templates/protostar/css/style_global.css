@@ -82,8 +82,7 @@ header .theme_nav .navbar-nav li ul.dropdown-menu{padding: 0;}
 span.num_count { width: 30px; height: 30px; background: #f00; display: inline-block; border-radius: 50%; color: #fff; font-weight: 600; position: absolute; top: -15px; line-height: 2; margin-left: 20px; z-index: 1; }
 span.num_count:after { content: ''; width: 0; height: 0; position: absolute; top: 16px; left: -6px; border-top: 6px solid transparent; border-bottom: 10px solid transparent; border-right: 15px solid #ff0000; transform: rotate(-39deg); z-index: -1; }
 .dfult-chck label {display: block;}
-.dfult-chck{font-size: 18px; text-align:right;}
-.dfult-chck input{width: 24px;height: 24px;vertical-align: bottom;}
+.dfult-chck input{width: 14px;height: 14px;vertical-align: text-bottom;margin-top: 0px;}
 
 /* Dashboard Navigation */
 .dashboard_nav .navbar { margin-bottom: 0; /*    background: #292929;*/ border-radius: 0; }
@@ -317,11 +316,7 @@ h1.breadcrumb_title{font-size : 24px !important;}.cls-add-ico .btn-danger {font-
 .paypalCreditDebit {display: block;margin: 26px auto;padding: 0;}
 .wrhsListDiv{margin-top: 10px;}
 .unpackwrhs{margin: 1px 8px 0 !important;vertical-align: middle;}
-.error-msg{color: #EC1B24;}
-.wrhsListDiv label {font-size: 12px;}
-.modal-md .modal-title{float:left;}
-.modal-md .fa-times{float: right;margin: 4px 5px;color: #a5a5a5;font-size: 16px; cursor: pointer;}
-.wrhsDetBody{padding: 0;}
+
 /* orderprocess pages CSS end */
 
 /*Inventry pre alert css start*/
@@ -491,10 +486,17 @@ table.shipping-costtbl{margin-bottom:30px;}
 .table-responsive{width: 100%;}
 .wrhsDetBody .panel-heading {cursor: pointer;}
 .wrhsDetBody a:hover{text-decoration: none;}
+.error-msg{color: #EC1B24;}
+.wrhsListDiv label {font-size: 12px;}
+.modal-md .modal-title{float:left;}
+.modal-md .fa-times{float: right;margin: 4px 5px;color: #a5a5a5;font-size: 16px; cursor: pointer;}
+.wrhsDetBody{padding: 0;}
+.wrhsDetBody .panel-title .expandMinus::after{font-family: 'Glyphicons Halflings';content:"\e114";float: right;color:#fff;-webkit-transform: rotate(180deg);-moz-transform: rotate(180deg);transform: rotate(180deg);}
+.wrhsDetBody .panel-title .expandPlus:after{font-family: 'Glyphicons Halflings';content: "\e114";float: right;color:#fff;}
+.dfult-chck{font-size: 12px !important;text-align: right !important;margin-top: 10px;margin-bottom: 0;}
+.wrhsDetBody .panel-title{cursor: pointer;}
+.page_content .main_panel .main_heading{padding: 15px 0 15px;}
 /*ui enhancement 2.6 css end*/
-.wrhsDetBody .panel-title{
-	cursor: pointer;
-}
 
 /* Responsive Start  */
 @media (max-width:1180px) {

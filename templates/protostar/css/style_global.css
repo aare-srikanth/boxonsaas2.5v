@@ -486,6 +486,8 @@ table.shipping-costtbl{margin-bottom:30px;}
 .theme_table thead tr th {white-space: inherit !important;}
 .theme_table tbody tr td {white-space: nowrap;}
 .table-responsive{width: 100%;}
+.wrhsDetBody .panel-heading {cursor: pointer;}
+.wrhsDetBody a:hover{text-decoration: none;}
 /*ui enhancement 2.6 css end*/
 
 /* Responsive Start  */
@@ -516,7 +518,8 @@ header .theme_nav{padding:0px 0;}
 .navbar-nav { float: none!important; margin-top: 7.5px; }
 .navbar-nav>li { float: none; }
 .navbar-nav>li>a { padding-top: 10px; padding-bottom: 10px; }
-.lang_menu{margin-top:0;}
+.lang_menu{float:right;text-align: right;margin-top: -60px;margin-right: 60px;display: inline-block;}
+.page_content {margin: 84px 0 0 0 !important;}
 .collapse.in { display: block !important; }
 .pp_load span{left:20%;}
 .profilepic_address {min-height: 400px !important;}
@@ -561,14 +564,14 @@ input.cls-email { width: 50%; }
 
 
 @media (max-width:767px) {
-.lang_menu {text-align: right;margin-top: 1px;margin-right: 70px;display: inline-block;float: right;position: relative;top: -25px;}
+.lang_menu {text-align: right;margin-top: 1px;margin-right: 56px;display: inline-block;float: right;position: relative;top: -35px !important;}
 .page_loader span{left:30px;}
 .navbar-toggle {display: block;top: 30px;}
 .navbar-collapse{padding-left:10px;}
 .navbar-nav .open .dropdown-menu .dropdown-header, .navbar-nav .open .dropdown-menu>li>a {padding: 5px 8px 5px 5px;font-size: 13px;}
 .notification_panel img{width:100%;}
 header .theme_nav{padding:0 0;}
-header .theme_nav .navbar-header img {height: 48px;position:relative;top:13px;}
+header .theme_nav .navbar-header img {height: 45px !important;position:relative;top:13px;}
 .finputfile .btn{padding: 7px 6px;width: 150px;}
 .cls-addrwclr .cls-add-ico {padding-left: 18px; width:100%;}
 .cls-addcol label {min-height: auto !important;}

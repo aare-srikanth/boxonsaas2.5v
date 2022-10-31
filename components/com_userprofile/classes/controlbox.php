@@ -5892,7 +5892,7 @@ if($priceStr != ""){
       <div class="panel panel-primary">
         <div class="panel-heading">
           <h4 class="panel-title">
-            <a>'.$wrhsDet->BillFormno.'</a>
+            <a>'.$wrhsDet->BillFormno.'</a><span class="expand">+</span>
           </h4>
         </div>
         <div id="test" class="panel-collapse collapse">

@@ -128,8 +128,6 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_register')
             <div class="panel-body notification_panel" >
                <?php
                
-               
-               
                if(!isset($mainPageDetails)){
                   echo '<img src="'.JURI::base().'/images/cmg-soon-image.png" >';
                }
@@ -137,14 +135,43 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_register')
                $config = JFactory::getConfig();
                
               if(strtolower($domainName) != "kupiglobal"){
+                  
+                //   var_dump($mainPageDetails);
+                //   exit;
+                
+                $nb_elem_per_page = 5;
+                $page = isset($_GET['page'])?intval($_GET['page']-1):0;
+                $number_of_pages = intval(count($mainPageDetails)/$nb_elem_per_page)+1;
+
+
+
+ 
+                        foreach(array_slice($mainPageDetails, $page*$nb_elem_per_page, $nb_elem_per_page) as $data){
+                      
+                            $str = '$id';
+                            if(strlen($data->Content) > 150){
+                                $content = substr($data->Content,150);
+                                $content .= '...<a href="index.php/en/component/register/notifications?Itemid=131#'.$data->$str.'" >Read more</a>';
+                            }else{
+                                $content = $data->Content;
+                            }
+                           echo '<div class="row ntifiction-info"><a href="index.php/en/component/register/notifications?Itemid=131#'.$data->$str.'" >'.$data->Heading.'</a><p>'.$content.'</p></div>';
+                             
+                       } 
+                    ?>
+                   
+                    <ul id='paginator' class="pagination">
+                    <li><a href = "#">&laquo;</a></li>
+                    <?php
+                    for($i=1;$i<$number_of_pages;$i++){ ?>
+                   
+                        <li><a href="<?php echo JRoute::_('index.php?option=com_register&view=login&page='.$i); ?>" <?php if($_GET['page']==$i){ echo 'class="active_col"'; }else if($i == 1 && !isset($_GET['page'])){ echo 'class="active_col"'; } ?> ><?=$i?></a></li>
+                        
+                        <?php } ?>
+                        <li><a href = "#">&raquo;</a></li>
+                    </ul>
                
-                   foreach($mainPageDetails as $data){
-                        $str = '$id';
-                       echo '<div class="row ntifiction-info"><a href="index.php/en/component/register/notifications?Itemid=131#'.$data->$str.'" >'.$data->Heading.'</a></div>';
-                         
-                   }
-               
-              }else{
+ <?php             }else{
                   foreach($mainPageDetails as $data){
                     $str = '$id';
                    echo '<div id="'.$data->$str.'" class="ntifiction-info" id="notification"><h4>'.$data->Heading.'</h4>';

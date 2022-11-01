@@ -503,6 +503,22 @@ table.shipping-costtbl{margin-bottom:30px;}
 .user-prfile .fa-user{font-size: 20px;}
 .helpLink .fa-play-circle-o{font-size: 22px;}
 .alert-drpdwn .dropdown-toggle:hover {color: #23bbed;}
+.notifications{margin-bottom: 10px;}
+.notifications .panel-heading{background-color: transparent;}
+.notifications .panel-primary {border-color: #e0e0e0;border-radius: 0;}
+.notifications .panel-heading+.panel-collapse>.panel-body {border-top-color: #e0e0e0;padding: 0 16px;text-align: justify;}
+.notifications .panel-title .expandMinus::after{font-size: 16px;font-family: 'Glyphicons Halflings';content: "\e114";float: left;color: #27b8eb;-webkit-transform: rotate(180deg);-moz-transform: rotate(180deg);transform: rotate(359deg);padding: 4px 5px 0 2px;}
+.notifications .panel-title .expandPlus:after{font-size: 16px;font-family: 'Glyphicons Halflings';content: "\e114";float: left;color: #27b8eb;padding: 0px 6px 0 0px;-webkit-transform: rotate(180deg);-moz-transform: rotate(180deg);transform: rotate(270deg);}
+.notifications .panel-title{cursor: pointer;}
+.notifications .panel-title a{color: #27b8eb;vertical-align: middle;text-transform: capitalize;font-size: 16px;}
+.ntifiction-info{padding: 0 20px 0 !important;}
+.notification_panel .pagination li:before{display: none !important;}
+.notification_panel .pagination li{font-style: normal;}
+.notifications .panel-title a:hover{text-decoration: none;color: #000 !important;}
+.active_col {color: red;background-color: #337ab7 !important;border: 1px solid #337ab7 !important;color: #fff !important;}
+.notification_panel .pagination{float:right;}
+.nitif-link a{text-transform: capitalize;}
+.ntifiction-info a{text-transform: capitalize;}
 /*ui enhancement 2.6 css end*/
 
 /* Responsive Start  */

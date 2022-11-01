@@ -497,6 +497,9 @@ table.shipping-costtbl{margin-bottom:30px;}
 .wrhsDetBody .panel-title{cursor: pointer;}
 .page_content .main_panel .main_heading{padding: 15px 0 15px;}
 /*ui enhancement 2.6 css end*/
+.active_col{
+    color:red;
+}
 
 /* Responsive Start  */
 @media (max-width:1180px) {

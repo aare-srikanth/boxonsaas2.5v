@@ -50,7 +50,7 @@ header .theme_nav .navbar-nav li ul.dropdown-menu{padding: 0;}
 /* Header */
 
 /* Language Menu */
-.lang_menu a {display: inline-block; margin:2px 0px 0 15px; color: #faa61a; font-size: 13px;}
+.lang_menu a {display: inline-block; margin:2px 10px 0 2px; color: #faa61a; font-size: 13px;}
 .lang_menu {text-align: right;margin-top: 10px;}
 .lang_menu img{width:24px;}  
 /* Language Menu */
@@ -484,7 +484,8 @@ table.shipping-costtbl{margin-bottom:30px;}
 .theme_table thead tr th {white-space: inherit !important;}
 .theme_table tbody tr td {white-space: nowrap;}
 .table-responsive{width: 100%;}
-.wrhsDetBody .panel-heading {cursor: pointer;}
+.wrhsDetBody .panel-heading {cursor: pointer;background-color: #23bbed;border-color: #23bbed;}
+.wrhsDetBody .panel-primary {border-color: #23bbed;}
 .wrhsDetBody a:hover{text-decoration: none;}
 .error-msg{color: #EC1B24;}
 .wrhsListDiv label {font-size: 12px;}
@@ -496,6 +497,12 @@ table.shipping-costtbl{margin-bottom:30px;}
 .dfult-chck{font-size: 12px !important;text-align: right !important;margin-top: 10px;margin-bottom: 0;}
 .wrhsDetBody .panel-title{cursor: pointer;}
 .page_content .main_panel .main_heading{padding: 15px 0 15px;}
+.alert-drpdwn .dropdown{background-color: transparent;padding: 10px 0px 0;}
+.alert-drpdwn .dropdown-toggle{background-color: transparent;border: 0;color: #000;}
+.alert-drpdwn .fa.fa-bell{font-size: 18px;}
+.user-prfile .fa-user{font-size: 20px;}
+.helpLink .fa-play-circle-o{font-size: 22px;}
+.alert-drpdwn .dropdown-toggle:hover {color: #23bbed;}
 /*ui enhancement 2.6 css end*/
 
 /* Responsive Start  */

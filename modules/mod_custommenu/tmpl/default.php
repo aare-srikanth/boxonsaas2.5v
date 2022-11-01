@@ -144,6 +144,26 @@ if($session->get('user_casillero_id')){
       
    
     </ul>
+
+              <?php 
+              $menuconent = '<a target="_blank" class="helpLink" href="https://lms.iblesoft.com/">Help</a>';
+              $menuconent .= '<div class="dropdown">'.
+              '<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'.
+                'Alerts <span class="caret"></span>'.
+              '</button>'.           
+              '<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">';
+                  if(strtolower($access->RepackAccess) == "true") {
+                    $menuconent .= '<li class="rnotify_sm_list"><a href="#">Repack<span class="badge badge-warning"></a></li>'.
+                      '<li><a href="#">Inprogress <span class="badge badge-warning">'.$alerts->RepackInprogressCount.'</span></a></li>'.
+                      '<li><a href="#">Completed <span class="badge badge-success">'.$alerts->RepackCompletedCount.'</span></a></li>';
+                   } if(strtolower($access->ConsolidationAccess) == "true") { 
+                    $menuconent .= '<li class="cnotify_sm_list"><a href="#">Consolidation </a></li>'.
+                      '<li><a href="#">Inprogress <span class="badge badge-warning">'.$alerts->ConsolidationInprogressCount.'</span></a></li>'.
+                      '<li><a href="#">Completed <span class="badge badge-success">'.$alerts->ConsolidationCompletedCount.'</span></a></li>';
+                   } 
+                  $menuconent .= '</ul></div>';
+              ?>
+
   </div>
 </div>
 <?php
@@ -192,7 +212,8 @@ if($session->get('user_casillero_id')){
 
     jQuery('.lang_menu').html(''); 
     
-    var menuContent = "<div class='lang_menu'>";
+    var menuContent = '<?php echo $menuconent; ?>';
+        menuContent += "<div class='lang_menu'>";
         menuContent+= "<a title='English' data-id='en' href=''><img src='<?php echo JURI::base(true); ?>/media/mod_languages/images/en_us.png' alt='English'></a>";
         menuContent+= "<a title='Spanish' data-id='es' href=''><img src='<?php echo JURI::base(true);?>/media/mod_languages/images/es.png' alt='Spanish'></a>";
         menuContent+= "<a title='bosnian' data-id='bs' href=''><img src='<?php echo JURI::base(true);?>/media/mod_languages/images/bs_ba.png' alt='Spanish'></a>";

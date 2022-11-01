@@ -108,25 +108,16 @@ if($session->get('user_casillero_id')){
         
         
       <li class="loader"><a href="<?php echo JRoute::_('index.php?option=com_userprofile&view=user'); ?>" ><?php  echo $dashboard; ?></a></li>
-      <li class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"> User Profile<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li class="loader"><a href="<?php echo JRoute::_('index.php?option=com_userprofile&view=user&layout=personalinformation'); ?>"><?php  echo $myAcc; ?></a></li>
-          <?php if($dynpage["ChangePassword"][1]=="ACT"){ ?>
-          <li class="loader"><a href="<?php echo JRoute::_('index.php?option=com_userprofile&view=user&layout=changepassword'); ?>"><?php  echo $changePass ?></a></li>
-          <?php } ?>
-          <li class="loader"><a href="<?php echo JRoute::_('index.php?option=com_userprofile&task=user.logout'); ?>"><?php  echo $logout ?></a></li>
-       </ul>
-      </li>
+      
      
       <?php if($dynpage["SupportTickets"][1]=="ACT"){ ?>
       <li class="loader"><a href="<?php echo JRoute::_('index.php?option=com_userprofile&&view=user&layout=support_ticket'); ?>"><?php  echo $tickets; ?></a></li>
       <?php } ?>
-      <li class="" ><a target="_blank" class="helpLink" href="https://lms.iblesoft.com/">Help</a></li>
-      <li class="">
+      <li class="" ><a target="_blank" class="helpLink" href="https://lms.iblesoft.com/" title="Help"><i class="fa fa-play-circle-o" aria-hidden="true"></i></a></li>
+      <li class="alert-drpdwn">
       <div class="dropdown">
-            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Alerts <span class="caret"></span>
+            <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Alerts">
+            <i class="fa fa-bell" aria-hidden="true"></i> <span class="caret"></span>
             </button>           
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                  <?php if(strtolower($access->RepackAccess) == "true") { ?>
@@ -141,7 +132,16 @@ if($session->get('user_casillero_id')){
             </ul>           
         </div>
       </li>
-      
+      <li class="dropdown user-prfile">
+      <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#" title="Userprofile"> <i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li class="loader"><a href="<?php echo JRoute::_('index.php?option=com_userprofile&view=user&layout=personalinformation'); ?>"><?php  echo $myAcc; ?></a></li>
+          <?php if($dynpage["ChangePassword"][1]=="ACT"){ ?>
+          <li class="loader"><a href="<?php echo JRoute::_('index.php?option=com_userprofile&view=user&layout=changepassword'); ?>"><?php  echo $changePass ?></a></li>
+          <?php } ?>
+          <li class="loader"><a href="<?php echo JRoute::_('index.php?option=com_userprofile&task=user.logout'); ?>"><?php  echo $logout ?></a></li>
+       </ul>
+      </li>
    
     </ul>
 

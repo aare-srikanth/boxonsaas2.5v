@@ -160,11 +160,15 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_register')
                        } 
                     ?>
                    
-                    <ul id='paginator'>
+                    <ul id='paginator' class="pagination">
+                    <li><a href = "#">&laquo;</a></li>
                     <?php
                     for($i=1;$i<$number_of_pages;$i++){ ?>
+                   
                         <li><a href="<?php echo JRoute::_('index.php?option=com_register&view=login&page='.$i); ?>" <?php if($_GET['page']==$i){ echo 'class="active_col"'; }else if($i == 1 && !isset($_GET['page'])){ echo 'class="active_col"'; } ?> ><?=$i?></a></li>
-                    <?php } ?>
+                        
+                        <?php } ?>
+                        <li><a href = "#">&raquo;</a></li>
                     </ul>
                
  <?php             }else{

@@ -19,6 +19,7 @@ $user=$session->get('user_casillero_id');
 ?>
 <?php include 'dasboard_navigation.php' ?>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo JUri::base(); ?>/components/com_register/css/style_global.css">
 <!-- 
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 -->  
@@ -27,15 +28,15 @@ $user=$session->get('user_casillero_id');
 	 var $joomla = jQuery.noConflict(); 
 	//warehoue collapse data
 $joomla(document).on('click','.panel-title',function() {
-    $joomla('.expand').html('+');
+	$joomla('.panel-title span').attr('class','expandPlus');
     // $joomla(this).find(".expand").html();
-    var expn =   $joomla(this).find(".expand").html();
+    var expn =   $joomla(this).find("#expand").attr("class");
     // alert(expn);
-    if(expn == '+'){
-        $joomla(this).find(".expand").html('-');
+    if(expn =='expandPlus'){
+        $joomla(this).find("#expand").attr('class','expandMinus');
     }
    else{
-    $joomla(this).find(".expand").html('+');
+    $joomla(this).find("#expand").attr('class','expandPlus');
    }
 
     $joomla(".panel-collapse").eq(0).addClass("collapse");
@@ -48,6 +49,7 @@ $joomla(document).on('click','.panel-title',function() {
     }
 
 });
+
 </script>
 <div class="container">
 	<div class="main_panel persnl_panel">
@@ -110,12 +112,12 @@ $joomla(document).on('click','.panel-title',function() {
 
                 //  $str = '$id';
                  //echo '<div id="'.$data->$str.'" class="ntifiction-info" id="notification"><h4>'.$data->Heading.'</h4>';
-				  $ntfTitle.='<div class="panel-group">
+				  $ntfTitle.='<div class="panel-group notifications" >
       
 				  <div class="panel panel-primary">
 					<div class="panel-heading">
 					  <h4 class="panel-title">
-						<a>'.$data->Heading.'</a><span class="expand" style="float:right">+</span>
+						<a>'.$data->Heading.'</a><span id="expand" class="expandPlus"></span>
 					  </h4>
 					</div>
 					<div id="test" class="panel-collapse collapse">

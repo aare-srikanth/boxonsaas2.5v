@@ -113,8 +113,8 @@ if($session->get('user_casillero_id')){
       <?php if($dynpage["SupportTickets"][1]=="ACT"){ ?>
       <li class="loader"><a href="<?php echo JRoute::_('index.php?option=com_userprofile&&view=user&layout=support_ticket'); ?>"><?php  echo $tickets; ?></a></li>
       <?php } ?>
-      <li class="" ><a target="_blank" class="helpLink" href="https://lms.iblesoft.com/" title="Help"><i class="fa fa-play-circle-o" aria-hidden="true"></i></a></li>
-      <li class="alert-drpdwn">
+      <!-- <li class="" ><a target="_blank" class="helpLink" href="https://lms.iblesoft.com/" title="Help"><i class="fa fa-play-circle-o" aria-hidden="true"></i></a></li> -->
+      <!-- <li class="alert-drpdwn">
       <div class="dropdown">
             <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Alerts">
             <i class="fa fa-bell" aria-hidden="true"></i> <span class="caret"></span>
@@ -131,7 +131,7 @@ if($session->get('user_casillero_id')){
                 <?php } ?>
             </ul>           
         </div>
-      </li>
+      </li> -->
       <li class="dropdown user-prfile">
       <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#" title="Userprofile"> <i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
         <ul class="dropdown-menu">
@@ -147,8 +147,8 @@ if($session->get('user_casillero_id')){
 
               <?php 
               $menuconent = '<a target="_blank" class="helpLink" href="https://lms.iblesoft.com/" title="Help"><i class="fa fa-play-circle-o" aria-hidden="true"></i></a>';
-              $menuconent .= '<div class="dropdown">'.
-              '<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'.
+              $menuconent .= '<div class="dropdown alert-drpdwn">'.
+              '<button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'.
               '<i class="fa fa-bell" aria-hidden="true"></i> <span class="caret"></span>'.
               '</button>'.           
               '<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">';
@@ -214,13 +214,13 @@ if($session->get('user_casillero_id')){
     
     var menuContent = "<div class='lang_menu'>";
         menuContent += '<?php echo $menuconent; ?>';
-        menuContent+= "<a title='English' data-id='en' href=''><img src='<?php echo JURI::base(true); ?>/media/mod_languages/images/en_us.png' alt='English'></a>";
+        menuContent+= "<div class='flag-icons'><a title='English' data-id='en' href=''><img src='<?php echo JURI::base(true); ?>/media/mod_languages/images/en_us.png' alt='English'></a>";
         menuContent+= "<a title='Spanish' data-id='es' href=''><img src='<?php echo JURI::base(true);?>/media/mod_languages/images/es.png' alt='Spanish'></a>";
-        menuContent+= "<a title='bosnian' data-id='bs' href=''><img src='<?php echo JURI::base(true);?>/media/mod_languages/images/bs_ba.png' alt='Spanish'></a>";
+        menuContent+= "<a title='bosnian' data-id='bs' href=''><img src='<?php echo JURI::base(true);?>/media/mod_languages/images/bs_ba.png' alt='Spanish'></a></div>";
         
     jQuery("#theme_nav").before(menuContent);
     
-    jQuery('.lang_menu a').each(function(){
+    jQuery('.lang_menu .flag-icons a').each(function(){
         var lang = jQuery(this).attr("data-id");
         if(langArr.includes(lang)){
             jQuery(this).show();
@@ -229,7 +229,7 @@ if($session->get('user_casillero_id')){
         } 
     });
     
-    jQuery(document).on('click','.lang_menu a',function(e){
+    jQuery(document).on('click','.lang_menu  a',function(e){
         e.preventDefault();
          var resurl = reqUrl.replace('/'+language,'/'+jQuery(this).attr("data-id"));
          window.location.href= resurl;

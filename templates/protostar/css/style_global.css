@@ -499,7 +499,7 @@ table.shipping-costtbl{margin-bottom:30px;}
 .page_content .main_panel .main_heading{padding: 15px 0 15px;}
 .alert-drpdwn .dropdown{background-color: transparent;padding: 10px 0px 0;}
 .alert-drpdwn .dropdown-toggle{background-color: transparent;border: 0;color: #000;}
-.alert-drpdwn .fa.fa-bell{font-size: 18px;}
+.alert-drpdwn .fa.fa-bell{font-size: 18px;vertical-align: bottom;}
 .user-prfile .fa-user{font-size: 20px;}
 .helpLink .fa-play-circle-o{font-size: 22px;}
 .alert-drpdwn .dropdown-toggle:hover {color: #23bbed;}
@@ -521,6 +521,7 @@ table.shipping-costtbl{margin-bottom:30px;}
 .ntifiction-info a{text-transform: capitalize;color: #000;font-weight: 700;}
 .ntifiction-info p{padding: 0 20px 0;margin: 0 0 4px;color: #000;}
 .ntifiction-info::before{font-family: FontAwesome;content: "\f00c";display: inline-block;padding-right: 6px;vertical-align: middle;color: #000;}
+.alert-drpdwn{display: inline-block;}
 /*ui enhancement 2.6 css end*/
 
 /* Responsive Start  */

@@ -25,6 +25,7 @@ $user=$session->get('user_casillero_id');
 -->  
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
 <script>
+	 
 	 var $joomla = jQuery.noConflict(); 
 	//warehoue collapse data
 $joomla(document).on('click','.panel-title',function() {
@@ -49,6 +50,7 @@ $joomla(document).on('click','.panel-title',function() {
     }
 
 });
+
 
 </script>
 <div class="container">
@@ -110,17 +112,17 @@ $joomla(document).on('click','.panel-title',function() {
 				$htmlString = $doc->saveHTML();
 				// echo '<p>'.$htmlString.'</p></div>';
 
-                //  $str = '$id';
+                 $str = '$id';
                  //echo '<div id="'.$data->$str.'" class="ntifiction-info" id="notification"><h4>'.$data->Heading.'</h4>';
-				  $ntfTitle.='<div class="panel-group notifications" >
+				  $ntfTitle.='<div class="panel-group notifications" id="'.$data->$str.'" >
       
 				  <div class="panel panel-primary">
 					<div class="panel-heading">
-					  <h4 class="panel-title">
+					  <h4 class="panel-title '.$data->$str.'">
 						<a>'.$data->Heading.'</a><span id="expand" class="expandPlus"></span>
 					  </h4>
 					</div>
-					<div id="test" class="panel-collapse collapse">
+					<div id="test" class="panel-collapse collapse '.$data->$str.'">
 					  <div class="panel-body"> 
 					  <p>'.$htmlString.'</p>
 					</div>
@@ -156,26 +158,22 @@ $joomla(document).on('click','.panel-title',function() {
 		           </div>
             </div>
 		    </div>
-		    <div class="col-sm-4 nitif-link">
-		        <div class="panel">
-		            <div class="panel-body">
-		                <!--<a href="#">Lorem ipsum is dummy text</a>-->
-		                <!--<a href="#">Lorem ipsum is dummy text</a>-->
-		                <!--<a href="#">Lorem ipsum is dummy text</a>-->
-		                <?php 
-		                
-                        for($i=count($mainPageDetails)-1; $i>=count($mainPageDetails)-5; $i--){
-                            $str = '$id';
-                            echo '<div class="row"><a href="index.php/en/component/register/notifications?Itemid=131#'.$mainPageDetails[$i]->$str.'" >'.$mainPageDetails[$i]->Heading.'</a></div>';
-                        }
-
-                   ?>
-		            </div>
-		        </div>
-		    </div>
-		</div>
-	      
-	        
+		    
 		</div>
 	</div>
 </div>
+
+<script>
+	$joomla(document).ready(function() {
+		urlString = window.location.href;
+		let paramString = urlString.split('?')[1];
+		let queryString = new URLSearchParams(paramString);
+
+		for(let pair of queryString.entries()) {
+		idNum = pair[1];
+		}
+		var idNumArr = idNum.split("#");
+		$joomla('.collapse.'+idNumArr[1]).toggle();
+		$joomla('.panel-title.'+idNumArr[1]).find("span").attr("class","expandMinus");
+	});
+</script>

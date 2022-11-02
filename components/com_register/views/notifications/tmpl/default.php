@@ -118,11 +118,11 @@ $joomla(document).on('click','.panel-title',function() {
       
 				  <div class="panel panel-primary">
 					<div class="panel-heading">
-					  <h4 class="panel-title">
+					  <h4 class="panel-title '.$data->$str.'">
 						<a>'.$data->Heading.'</a><span id="expand" class="expandPlus"></span>
 					  </h4>
 					</div>
-					<div id="test" class="panel-collapse collapse">
+					<div id="test" class="panel-collapse collapse '.$data->$str.'">
 					  <div class="panel-body"> 
 					  <p>'.$htmlString.'</p>
 					</div>
@@ -173,6 +173,7 @@ $joomla(document).on('click','.panel-title',function() {
 		idNum = pair[1];
 		}
 		var idNumArr = idNum.split("#");
-		$joomla('.collapse:eq('+(idNumArr[1]-1)+')').toggle();
+		$joomla('.collapse.'+idNumArr[1]).toggle();
+		$joomla('.panel-title.'+idNumArr[1]).find("span").attr("class","expandMinus");
 	});
 </script>

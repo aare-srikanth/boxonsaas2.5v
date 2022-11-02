@@ -212,8 +212,8 @@ if($session->get('user_casillero_id')){
 
     jQuery('.lang_menu').html(''); 
     
-    var menuContent = '<?php echo $menuconent; ?>';
-        menuContent += "<div class='lang_menu'>";
+    var menuContent = "<div class='lang_menu'>";
+        menuContent += '<?php echo $menuconent; ?>';
         menuContent+= "<a title='English' data-id='en' href=''><img src='<?php echo JURI::base(true); ?>/media/mod_languages/images/en_us.png' alt='English'></a>";
         menuContent+= "<a title='Spanish' data-id='es' href=''><img src='<?php echo JURI::base(true);?>/media/mod_languages/images/es.png' alt='Spanish'></a>";
         menuContent+= "<a title='bosnian' data-id='bs' href=''><img src='<?php echo JURI::base(true);?>/media/mod_languages/images/bs_ba.png' alt='Spanish'></a>";

@@ -518,7 +518,9 @@ table.shipping-costtbl{margin-bottom:30px;}
 .active_col {color: red;background-color: #337ab7 !important;border: 1px solid #337ab7 !important;color: #fff !important;}
 .notification_panel .pagination{float:right;}
 .nitif-link a{text-transform: capitalize;}
-.ntifiction-info a{text-transform: capitalize;}
+.ntifiction-info a{text-transform: capitalize;color: #000;font-weight: 700;}
+.ntifiction-info p{padding: 0 20px 0;margin: 0 0 4px;color: #000;}
+.ntifiction-info::before{font-family: FontAwesome;content: "\f00c";display: inline-block;padding-right: 6px;vertical-align: middle;color: #000;}
 /*ui enhancement 2.6 css end*/
 
 /* Responsive Start  */

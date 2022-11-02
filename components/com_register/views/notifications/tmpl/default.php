@@ -158,26 +158,7 @@ $joomla(document).on('click','.panel-title',function() {
 		           </div>
             </div>
 		    </div>
-		    <div class="col-sm-4 nitif-link">
-		        <div class="panel">
-		            <div class="panel-body">
-		                <!--<a href="#">Lorem ipsum is dummy text</a>-->
-		                <!--<a href="#">Lorem ipsum is dummy text</a>-->
-		                <!--<a href="#">Lorem ipsum is dummy text</a>-->
-		                <?php 
-		                
-                        for($i=count($mainPageDetails)-1; $i>=count($mainPageDetails)-5; $i--){
-                            $str = '$id';
-                            echo '<div class="row"><a href="index.php/en/component/register/notifications?Itemid=131#'.$mainPageDetails[$i]->$str.'" >'.$mainPageDetails[$i]->Heading.'</a></div>';
-                        }
-
-                   ?>
-		            </div>
-		        </div>
-		    </div>
-		</div>
-	      
-	        
+		    
 		</div>
 	</div>
 </div>
@@ -192,6 +173,6 @@ $joomla(document).on('click','.panel-title',function() {
 		idNum = pair[1];
 		}
 		var idNumArr = idNum.split("#");
-		$joomla('.collapse').eq(0).toggle();
+		$joomla('.collapse:eq('+(idNumArr[1]-1)+')').toggle();
 	});
 </script>

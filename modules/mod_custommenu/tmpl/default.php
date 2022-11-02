@@ -146,10 +146,10 @@ if($session->get('user_casillero_id')){
     </ul>
 
               <?php 
-              $menuconent = '<a target="_blank" class="helpLink" href="https://lms.iblesoft.com/">Help</a>';
+              $menuconent = '<a target="_blank" class="helpLink" href="https://lms.iblesoft.com/" title="Help"><i class="fa fa-play-circle-o" aria-hidden="true"></i></a>';
               $menuconent .= '<div class="dropdown">'.
               '<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'.
-                'Alerts <span class="caret"></span>'.
+              '<i class="fa fa-bell" aria-hidden="true"></i> <span class="caret"></span>'.
               '</button>'.           
               '<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">';
                   if(strtolower($access->RepackAccess) == "true") {

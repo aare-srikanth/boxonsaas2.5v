@@ -25,6 +25,7 @@ $user=$session->get('user_casillero_id');
 -->  
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
 <script>
+	 
 	 var $joomla = jQuery.noConflict(); 
 	//warehoue collapse data
 $joomla(document).on('click','.panel-title',function() {
@@ -49,6 +50,7 @@ $joomla(document).on('click','.panel-title',function() {
     }
 
 });
+
 
 </script>
 <div class="container">
@@ -110,9 +112,9 @@ $joomla(document).on('click','.panel-title',function() {
 				$htmlString = $doc->saveHTML();
 				// echo '<p>'.$htmlString.'</p></div>';
 
-                //  $str = '$id';
+                 $str = '$id';
                  //echo '<div id="'.$data->$str.'" class="ntifiction-info" id="notification"><h4>'.$data->Heading.'</h4>';
-				  $ntfTitle.='<div class="panel-group notifications" >
+				  $ntfTitle.='<div class="panel-group notifications" id="'.$data->$str.'" >
       
 				  <div class="panel panel-primary">
 					<div class="panel-heading">
@@ -179,3 +181,17 @@ $joomla(document).on('click','.panel-title',function() {
 		</div>
 	</div>
 </div>
+
+<script>
+	$joomla(document).ready(function() {
+		urlString = window.location.href;
+		let paramString = urlString.split('?')[1];
+		let queryString = new URLSearchParams(paramString);
+
+		for(let pair of queryString.entries()) {
+		idNum = pair[1];
+		}
+		var idNumArr = idNum.split("#");
+		$joomla('.collapse').eq(0).toggle();
+	});
+</script>

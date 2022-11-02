@@ -149,11 +149,11 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_register')
                         foreach(array_slice($mainPageDetails, $page*$nb_elem_per_page, $nb_elem_per_page) as $data){
                       
                             $str = '$id';
-                            if(strlen($data->Content) > 150){
-                                $content = substr($data->Content,150);
+                            if(strlen($data->Content) > 100){
+                                $content = substr(strip_tags($data->Content),0,100);
                                 $content .= '...<a href="index.php/en/component/register/notifications?Itemid=131#'.$data->$str.'" >Read more</a>';
                             }else{
-                                $content = $data->Content;
+                                $content = strip_tags($data->Content);
                             }
                            echo '<div class="row ntifiction-info"><a href="index.php/en/component/register/notifications?Itemid=131#'.$data->$str.'" >'.$data->Heading.'</a><p>'.$content.'</p></div>';
                              

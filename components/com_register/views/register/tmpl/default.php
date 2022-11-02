@@ -1097,7 +1097,7 @@
                   </div>
                   
                   <?php
-                  
+                    
                     $requrlArr = explode("/",$_SERVER['REQUEST_URI']);
                     
                     if(count($requrlArr) == 5){
@@ -1110,13 +1110,18 @@
                     
                    
                     if(file_exists($_SERVER['DOCUMENT_ROOT'].$envfoldername.'/templates/protostar/clients/'.strtolower($domainName).'/terms_conditions_'.$language.'.php')){
-                        $html = file_get_contents(JURI::base().'templates/protostar/clients/'.strtolower($domainName).'/terms_conditions_'.$language.'.php');
+                     
+                   
+                        $html = file_get_contents($_SERVER['DOCUMENT_ROOT'].$envfoldername.'/templates/protostar/clients/'.strtolower($domainName).'/terms_conditions_'.$language.'.php');
+
+                        
                         $dom = new DOMDocument();
                         $dom->loadHTML($html);
                         $xpath = new DOMXPath($dom);
                         $div = $xpath->query('//div[@id="terms_conditions"]');
                         $div = $div->item(0);
                         $tandc_content = $dom->saveXML($div);
+                        
                     }else{
                         $tandc_content = "<center>No Data</center>";
                     }
@@ -1126,21 +1131,22 @@
                     
                   ?>
                   
-                  <h4 class="heading"><?php echo str_replace('XXXX',strtoupper($companyName),Jtext::_('COM_REGISTER_TERM_LABEL'));?></h4>
+                  <!-- <h4 class="heading"><?#php echo str_replace('XXXX',strtoupper($companyName),Jtext::_('COM_REGISTER_TERM_LABEL'));?></h4> -->
                   <div class="row">
-                     <div class="col-sm-12">
+                     <!-- <div class="col-sm-12">
                         
-                           <?php echo $tandc_content;  ?>
+                           <?#php echo $tandc_content;  ?>
                        
-                     </div>
-                     
+                     </div> -->
+                    <!-- <?#php echo '<a target="_blank" href="'.JURI::base().'templates/protostar/clients/'.strtolower($domainName).'/terms_conditions_'.$language.'.php">Terms and conditions </a>'; ?>           -->
                      <div class="clearfix"></div>
                      
                      <div class="col-sm-12">
                         <div class="form-group acpt_trms_err">
                            <label>
                            <input type="checkbox" name="termsTxt" id="termsTxt" value=1>
-                           <?php echo Jtext::_('COM_REGISTER_ACCEPT_TERM_LABEL');?> <span class="error">*</span></label>
+                         
+                           <?php echo '<a target="_blank" href="'.JURI::base().'templates/protostar/clients/'.strtolower($domainName).'/terms_conditions_'.$language.'.php">'.Jtext::_('COM_REGISTER_ACCEPT_TERM_LABEL').'</a>'; ?><span class="error">*</span></label>
                         </div>
                      </div>
                      

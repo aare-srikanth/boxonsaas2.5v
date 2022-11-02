@@ -522,6 +522,12 @@ table.shipping-costtbl{margin-bottom:30px;}
 .ntifiction-info p{padding: 0 20px 0;margin: 0 0 4px;color: #000;}
 .ntifiction-info::before{font-family: FontAwesome;content: "\f00c";display: inline-block;padding-right: 6px;vertical-align: middle;color: #000;}
 .alert-drpdwn{display: inline-block;}
+.flag-icons{display: inline;}
+.helpLink{vertical-align: bottom;color: #000;}
+.rnotify_sm_list{background-color: #31b0d5;}
+.rnotify_sm_list a{color:#000;margin: 0 0;}
+.alert-drpdwn .dropdown-menu li a{padding: 6px 10px;text-transform: uppercase;}
+.alert-drpdwn .dropdown-menu{padding:0 0;margin: 0 0;}
 /*ui enhancement 2.6 css end*/
 
 /* Responsive Start  */

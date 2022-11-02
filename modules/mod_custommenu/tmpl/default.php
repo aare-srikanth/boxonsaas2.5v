@@ -114,7 +114,7 @@ if($session->get('user_casillero_id')){
       <li class="loader"><a href="<?php echo JRoute::_('index.php?option=com_userprofile&&view=user&layout=support_ticket'); ?>"><?php  echo $tickets; ?></a></li>
       <?php } ?>
       <!-- <li class="" ><a target="_blank" class="helpLink" href="https://lms.iblesoft.com/" title="Help"><i class="fa fa-play-circle-o" aria-hidden="true"></i></a></li> -->
-      <!-- <li class="alert-drpdwn">
+      <li class="alert-drpdwn">
       <div class="dropdown">
             <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Alerts">
             <i class="fa fa-bell" aria-hidden="true"></i> <span class="caret"></span>
@@ -131,7 +131,7 @@ if($session->get('user_casillero_id')){
                 <?php } ?>
             </ul>           
         </div>
-      </li> -->
+      </li> 
       <li class="dropdown user-prfile">
       <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#" title="Userprofile"> <i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
         <ul class="dropdown-menu">

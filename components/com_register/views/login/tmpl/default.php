@@ -151,7 +151,7 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_register')
                             $str = '$id';
                             if(strlen($data->Content) > 100){
                                 $content = substr(strip_tags($data->Content),0,100);
-                                $content .= '...<a href="index.php/en/component/register/notifications?Itemid=131#'.$data->$str.'" >Read more</a>';
+                                $content .= '...<a href="index.php/en/component/register/notifications?Itemid=131#'.$data->$str.'" class="ntifiction-link">Read more</a>';
                             }else{
                                 $content = strip_tags($data->Content);
                             }

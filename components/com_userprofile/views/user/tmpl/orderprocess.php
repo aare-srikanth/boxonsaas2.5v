@@ -4322,8 +4322,8 @@
    
    <!--warehouse details modal-->
    
-<div id="wrhsDetails" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-md">
+<div id="wrhsDetails" class="modal fade warehude-detail_popup" role="dialog">
+      <div class="modal-dialog modal-lg">
          <div class="modal-content">
             <div class="modal-header">
                <h4 class="modal-title"><strong><?php echo Jtext::_('Warehouse Details');  ?></strong></h4>

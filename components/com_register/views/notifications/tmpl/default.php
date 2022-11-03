@@ -58,8 +58,8 @@ $joomla(document).on('click','.panel-title',function() {
 	    
 		<div class="main_heading">Notifications</div>
 		<div class="panel-body">
-		    <div class="col-sm-8">
-		       <div class="panel">
+		    <div class="col-sm-12">
+		       <div class="panel notifction_panel">
 		           <div class="panel-body">
 		               <!--<div class="ntifiction-info" id="notification">-->
 		               <!--<h4>Lorem ipsum is dummy text <span>14 Apr ,2021 at 3.10</span></h4>-->

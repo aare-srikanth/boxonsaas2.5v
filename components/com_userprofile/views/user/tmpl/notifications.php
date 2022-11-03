@@ -26,7 +26,7 @@ $user=$session->get('user_casillero_id');
 	    
 		<div class="main_heading">Notifications</div>
 		<div class="panel-body">
-		    <div class="col-sm-8">
+		    <div class="col-sm-12">
 		       <div class="panel">
 		           <div class="panel-body">
 		               <div class="ntifiction-info" id="notification">

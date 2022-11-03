@@ -5898,12 +5898,9 @@ if($priceStr != ""){
         <div id="test" class="panel-collapse collapse">
           <div class="panel-body"> 
           <table class="table table-bordered theme_table">
-         <tr><td><strong>Quantity Received</strong> </td><td>'.$wrhsDet->QtReceived.'</td></tr>
-         <tr><td><strong>Quantity Shipped </strong></td><td>'.$wrhsDet->QtShipped.'</td></tr>
-         <tr><td><strong>Quantity Rejected </strong></td><td>'.$wrhsDet->QtRejected.'</td></tr>
-         <tr><td><strong>Quantity Delivered</strong> </td><td>'.$wrhsDet->QtDeliverd.'</td></tr>
-         <tr><td><strong>Quantity On Hand</strong></td><td>'.$wrhsDet->QtOnhand.'</td></tr>
-         <tr><td><strong>Status</strong></td><td>'.$wrhsDet->Status.'</td></tr>
+         <tr><td><strong>Quantity Received</strong> </td><td><strong>Quantity Shipped </strong></td><td><strong>Quantity Rejected </strong></td><td><strong>Quantity Delivered</strong> </td><td><strong>Quantity On Hand</strong></td><td><strong>Status</strong></td></tr>
+         <tr><td>'.$wrhsDet->QtReceived.'</td><td>'.$wrhsDet->QtShipped.'</td><td>'.$wrhsDet->QtRejected.'</td><td>'.$wrhsDet->QtDeliverd.'</td><td>'.$wrhsDet->QtOnhand.'</td><td>'.$wrhsDet->Status.'</td></tr>
+         
          </table>
           </div>
         </div>

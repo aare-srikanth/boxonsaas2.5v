@@ -113,8 +113,8 @@ if($session->get('user_casillero_id')){
       <?php if($dynpage["SupportTickets"][1]=="ACT"){ ?>
       <li class="loader"><a href="<?php echo JRoute::_('index.php?option=com_userprofile&&view=user&layout=support_ticket'); ?>"><?php  echo $tickets; ?></a></li>
       <?php } ?>
-      <!-- <li class="" ><a target="_blank" class="helpLink" href="https://lms.iblesoft.com/" title="Help"><i class="fa fa-play-circle-o" aria-hidden="true"></i></a></li> -->
-      <li class="alert-drpdwn">
+       <li class="" ><a target="_blank" class="helpLink" href="https://lms.iblesoft.com/" title="Help">Help</a></li>
+      <!-- <li class="alert-drpdwn">
       <div class="dropdown">
             <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Alerts">
             <i class="fa fa-bell" aria-hidden="true"></i> <span class="caret"></span>
@@ -131,7 +131,7 @@ if($session->get('user_casillero_id')){
                 <?php } ?>
             </ul>           
         </div>
-      </li> 
+      </li>  -->
       <li class="dropdown user-prfile">
       <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#" title="Userprofile"> <i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
         <ul class="dropdown-menu">
@@ -146,20 +146,20 @@ if($session->get('user_casillero_id')){
     </ul>
 
               <?php 
-              $menuconent = '<a target="_blank" class="helpLink" href="https://lms.iblesoft.com/" title="Help"><i class="fa fa-play-circle-o" aria-hidden="true"></i></a>';
-              $menuconent .= '<div class="dropdown alert-drpdwn">'.
+              // $menuconent = '<a target="_blank" class="helpLink" href="https://lms.iblesoft.com/" title="Help"><i class="fa fa-play-circle-o" aria-hidden="true"></i></a>';
+              $menuconent = '<div class="dropdown alert-drpdwn">'.
               '<button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'.
-              '<i class="fa fa-bell" aria-hidden="true"></i> <span class="caret"></span>'.
+              '<i class="fa fa-bell" aria-hidden="true"></i>Alert<span class="caret"></span>'.
               '</button>'.           
-              '<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">';
+              '<ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">';
                   if(strtolower($access->RepackAccess) == "true") {
                     $menuconent .= '<li class="rnotify_sm_list"><a href="#">Repack<span class="badge badge-warning"></a></li>'.
-                      '<li><a href="#">Inprogress <span class="badge badge-warning">'.$alerts->RepackInprogressCount.'</span></a></li>'.
-                      '<li><a href="#">Completed <span class="badge badge-success">'.$alerts->RepackCompletedCount.'</span></a></li>';
+                      '<li class="alert-status"><a href="#">Inprogress <span class="badge badge-warning">'.$alerts->RepackInprogressCount.'</span></a></li>'.
+                      '<li class="alert-status"><a href="#">Completed <span class="badge badge-success">'.$alerts->RepackCompletedCount.'</span></a></li>';
                    } if(strtolower($access->ConsolidationAccess) == "true") { 
                     $menuconent .= '<li class="cnotify_sm_list"><a href="#">Consolidation </a></li>'.
-                      '<li><a href="#">Inprogress <span class="badge badge-warning">'.$alerts->ConsolidationInprogressCount.'</span></a></li>'.
-                      '<li><a href="#">Completed <span class="badge badge-success">'.$alerts->ConsolidationCompletedCount.'</span></a></li>';
+                      '<li class="alert-status"><a href="#">Inprogress <span class="badge badge-warning">'.$alerts->ConsolidationInprogressCount.'</span></a></li>'.
+                      '<li class="alert-status"><a href="#">Completed <span class="badge badge-success">'.$alerts->ConsolidationCompletedCount.'</span></a></li>';
                    } 
                   $menuconent .= '</ul></div>';
               ?>

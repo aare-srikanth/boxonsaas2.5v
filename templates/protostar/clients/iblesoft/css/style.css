@@ -195,8 +195,7 @@ span.cls-dash {border-bottom: 2px solid #fd8c40;}
     .ntifiction-info span {
     margin: 7px 0 10px;
 }
- .ntifiction-info p{font-size: 12px;
-    margin-top: 20px;}
+ .ntifiction-info p{font-size: 12px;margin-top:6px;}
 }
 @media (max-width:768px) {
     header .theme_nav .navbar-header img{margin-top: 18px;}

@@ -163,6 +163,7 @@ $joomla(document).on('click','.panel-title',function() {
 	</div>
 </div>
 
+
 <script>
 	$joomla(document).ready(function() {
 		urlString = window.location.href;

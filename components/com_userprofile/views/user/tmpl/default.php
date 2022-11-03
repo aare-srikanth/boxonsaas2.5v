@@ -307,7 +307,7 @@ $joomla(function() {
               <?php 
                            }
                         ?>
-                        <h3><?php echo Jtext::_('COM_USERPROFILE_DASHBOARD_WELCOME');?> <?php echo $UserView->UserName;?>!</h3>
+                        <h3><?php echo $UserView->UserName;?>!</h3>
 						<!-- <div class="edit-ico">
                     <label class="labelFile">
                       <input type="file" required="">

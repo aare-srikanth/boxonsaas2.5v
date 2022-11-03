@@ -1146,7 +1146,7 @@
                            <label>
                            <input type="checkbox" name="termsTxt" id="termsTxt" value=1>
                          
-                           <?php echo '<a target="_blank" href="'.JURI::base().'templates/protostar/clients/'.strtolower($domainName).'/terms_conditions_'.$language.'.php">'.Jtext::_('COM_REGISTER_ACCEPT_TERM_LABEL').'</a>'; ?><span class="error">*</span></label>
+                           <?php echo 'I ACCEPT <a target="_blank" href="'.JURI::base().'templates/protostar/clients/'.strtolower($domainName).'/terms_conditions_'.$language.'.php">TERMS AND CONDITIONS</a>'; ?><span class="error">*</span></label>
                         </div>
                      </div>
                      

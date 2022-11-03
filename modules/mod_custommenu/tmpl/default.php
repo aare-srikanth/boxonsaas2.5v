@@ -149,7 +149,7 @@ if($session->get('user_casillero_id')){
               // $menuconent = '<a target="_blank" class="helpLink" href="https://lms.iblesoft.com/" title="Help"><i class="fa fa-play-circle-o" aria-hidden="true"></i></a>';
               $menuconent = '<div class="dropdown alert-drpdwn">'.
               '<button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'.
-              '<i class="fa fa-bell" aria-hidden="true"></i>Alert<span class="caret"></span>'.
+              '<i class="fa fa-bell" aria-hidden="true"></i>Alerts<span class="caret"></span>'.
               '</button>'.           
               '<ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">';
                   if(strtolower($access->RepackAccess) == "true") {

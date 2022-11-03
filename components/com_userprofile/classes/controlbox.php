@@ -5897,11 +5897,13 @@ if($priceStr != ""){
         </div>
         <div id="test" class="panel-collapse collapse">
           <div class="panel-body"> 
+          <div class="table-responsive">
           <table class="table table-bordered theme_table">
-         <tr><td><strong>Quantity Received</strong> </td><td><strong>Quantity Shipped </strong></td><td><strong>Quantity Rejected </strong></td><td><strong>Quantity Delivered</strong> </td><td><strong>Quantity On Hand</strong></td><td><strong>Status</strong></td></tr>
+         <tr class="warehuse-bg"><td><strong>Quantity Received</strong> </td><td><strong>Quantity Shipped </strong></td><td><strong>Quantity Rejected </strong></td><td><strong>Quantity Delivered</strong> </td><td><strong>Quantity On Hand</strong></td><td style="width:100px;"><strong>Status</strong></td></tr>
          <tr><td>'.$wrhsDet->QtReceived.'</td><td>'.$wrhsDet->QtShipped.'</td><td>'.$wrhsDet->QtRejected.'</td><td>'.$wrhsDet->QtDeliverd.'</td><td>'.$wrhsDet->QtOnhand.'</td><td>'.$wrhsDet->Status.'</td></tr>
          
          </table>
+         </div>
           </div>
         </div>
       </div>

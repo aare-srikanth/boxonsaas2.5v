@@ -28,7 +28,7 @@ header .top_header .social_icons ul { list-style: none; padding: 0; margin: 0; }
 header .top_header .social_icons ul li { display: inline-block; }
 header .top_header .social_icons ul li a { color: #fff; font-size: 18px; margin: 5px 5px; width: 25px; display: block; text-align: center; }
 header .top_header .social_icons ul li a:hover .fa { color: #0e0e0e; }
-header .theme_nav { background: #fff; /*box-shadow: 0 8px 6px -6px #d8d8d8;*/ /* border-bottom: 1px solid #ccc;*/ border-radius: 0; min-height: initial; margin-bottom: 2px; padding:10px 0px; }
+header .theme_nav { background: #fff; /*box-shadow: 0 8px 6px -6px #d8d8d8;*/ /* border-bottom: 1px solid #ccc;*/ border-radius: 0; min-height: initial; margin-bottom: 2px;padding: 0 0;}
 header .theme_nav.fixed { position: fixed; top: 0; width: 100%; z-index: 9999; }
 header .theme_nav .navbar-collapse {margin-top: 5px; }
 header .theme_nav .navbar-header img {height: 60px; margin-top: 10px; }
@@ -555,21 +555,22 @@ table.shipping-costtbl{margin-bottom:30px;}
 .warehude-detail_popup .modal-title{float: left;}
 .warehude-detail_popup td{white-space: normal !important;}
 .warehude-detail_popup .modal-lg{width:640px;}
+.warehude-detail_popup .theme_table {margin: 0px 0 0;}
 @media (max-width:1024px) {
 	.address_section {border-top: 2px solid #ccc;}
-	.navbar-collapse.navbar-right.custommenu {display: block !important;}	.warehude-detail_popup .modal-lg {
-		width: 100%;
+	.navbar-collapse.navbar-right.custommenu {display: block !important;}	
+	.warehude-detail_popup .modal-lg {width: 60%;
 	}}
 @media (max-width: 991px) {
 	.address_section{border-top: 0;}
-	.navbar-collapse.navbar-right.custommenu {display: block;}.warehude-detail_popup .modal-lg {
-		width: 100%;
+	.navbar-collapse.navbar-right.custommenu {display: block;}
+	.warehude-detail_popup .modal-lg {width: 60%;
 	}	}
 @media (max-width:768px) {
 	.address_section{border-top: 0;}
 		.prof-pic-blk1 h3{font-size: 18px;}
-	.navbar-collapse.navbar-right.custommenu {display: block !important;}.warehude-detail_popup .modal-lg {
-		width: 100%;
+	.navbar-collapse.navbar-right.custommenu {display: block !important;}
+	.warehude-detail_popup .modal-lg {width: 90%;
 	}	}
 @media (max-width:767px) {
 	.alert-drpdwn .fa.fa-bell {font-size: 20px;}
@@ -578,13 +579,14 @@ table.shipping-costtbl{margin-bottom:30px;}
 	.lang_menu img {width: 22px;}
 	.helpLink .fa-play-circle-o {font-size: 21px;}
 	.dfult-chck input {width: 18px;height: 18px;}
-.address_section {border-top: 2px solid #ccc;}.warehude-detail_popup .modal-lg {
-    width: 100%;
-}}
+.address_section {border-top: 2px solid #ccc;}
+.warehude-detail_popup .modal-lg {width: 95%;}
+.btn-grp1 input[type=button] {font-size: 14px;margin: 4px 0;}
+.theme_table thead tr th{font-size: 12px;}
+}
 @media (max-width:480px) {
 	.alert-drpdwn {position: relative;margin: 0px 8px 8px 0;top: 45px;left: 140px;font-size: 14px;z-index: 4;}
-		.collapse.in {display: block !important;width: 100%;background: #fff;z-index: 5;position: relative;top: -33px;margin: 0;}.warehude-detail_popup .modal-lg {
-			width: 100%;}}
+		.collapse.in {display: block !important;width: 100%;background: #fff;z-index: 5;position: relative;top: -33px;margin: 0;}}
 
 
 /*ui enhancement 2.6 css end*/
@@ -611,9 +613,9 @@ table.shipping-costtbl{margin-bottom:30px;}
 
 @media (max-width: 991px) {
 .navbar { min-height: 70px; }
-.navbar-right .dropdown-menu{right:auto;}
+.navbar-right .dropdown-menu{right:auto;width: 100%;}
 .navbar-header { float: none; }
-header .theme_nav{padding:0px 0;}
+header .theme_nav{padding:0px 0 !important ;}
 .navbar-left, .navbar-right { float: none !important; }
 .navbar-toggle { display: block; top: 10px; }
 .navbar-collapse { border-top: 1px solid transparent; box-shadow: inset 0 1px 0 rgba(255,255,255,0.1); }
@@ -631,7 +633,7 @@ header .theme_nav{padding:0px 0;}
  @media (max-width: 768px) {
 header .theme_nav .navbar-nav { margin: 0; }
 header .theme_nav .navbar-nav li { margin: 0; }
-header .theme_nav .navbar-nav li a { padding: 15px 0; }
+header .theme_nav .navbar-nav li a { padding: 12px 0; }
 header .theme_nav .navbar-toggle { margin: 0; }
 header .theme_nav{padding:0px 0;}
 .navbar-right .dropdown-menu{right:auto;}
@@ -675,6 +677,7 @@ input.cls-email { width: 50%; }
 .navbar-nav .open .dropdown-menu .dropdown-header, .navbar-nav .open .dropdown-menu>li>a {padding: 5px 8px 5px 5px;font-size: 13px;}
 .notification_panel img{width:100%;}
 header .theme_nav{padding:0 0;}
+header .theme_nav .navbar-nav li a { padding: 12px 0; }
 header .theme_nav .navbar-header img {height: 45px !important;position:relative;top:13px;}
 .finputfile .btn{padding: 7px 6px;width: 150px;}
 .cls-addrwclr .cls-add-ico {padding-left: 18px; width:100%;}
@@ -688,7 +691,7 @@ header .theme_nav .navbar-header img {height: 45px !important;position:relative;
 .footer_top .cls-fmenu li, .footer_top .cls-fmenu li a { clear: both; display: inline-block; }
 .footer_top li{font-size:14px !important;padding-left: 6px}
 .footer .footer_top h4 {font-size: 18px;padding-left: 6px;}
-.dfult-chck { text-align: left; margin-top: 15px;}
+.dfult-chck { text-align: right; margin-top: 15px;}
 .dfult-chck label{display:none;}
 .inventry-alert h3{text-align:center;}
 .inventry-alert .btn.btn-primary{margin: 8px auto;display: block;width: fit-content;}

@@ -1051,10 +1051,7 @@ $joomla(document).ready(function() {
     
 });
 </script>
-<style type="text/css">
-    .tp-rdobtn input[type="radio"]{margin-top:2px;}
-    .tp-rdobtn .radio-inline {margin-right: 30px;}
-</style>
+
 <div class="container">
   <div class="main_panel persnl_panel">
     <!-- <div class="main_heading">My Project Request</div>-->

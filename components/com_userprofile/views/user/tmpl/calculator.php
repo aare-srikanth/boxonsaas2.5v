@@ -655,12 +655,7 @@ $joomla(document).ready(function(){
     
 });
 </script>
-<style>
-.rty div{display: block; clear: both; width: 100%;}
-.rty input[type="radio"]{float:left; margin-right:10px;}
-.rty label {float: left; display: inline-block;  min-width: 150px; margin-right: 5px;}
-.price-align1{display:inline-block;}
-</style>
+
 <div class="container">
 	<div class="main_panel persnl_panel">
 		<div class="main_heading"><?php echo $assArr['calculator'];?></div>

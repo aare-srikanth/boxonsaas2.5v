@@ -480,6 +480,20 @@ table.shipping-costtbl{margin-bottom:30px;}
 .inhouse_paynow a.label-success {background-color: #5cb85c;border-radius: 20px;padding: 5px 15px;color: #fff;font-weight: bold;}
 .completeDetails{ cursor:pointer;color:#23bbed; }
 
+/*orderprocess page css 22-11-2022 start*/
+.col-img-all {float: left;width: 25%;padding: 10px;border: 1px solid;}
+.pdf-view {position: relative;}
+.col-img-all img {opacity: 0.8; cursor: pointer; height: 70px;}
+.col-img-all img:hover {opacity: 1;}
+.mult-img-container {position: relative;display: none;margin-top:30px;}
+.pdf-img{text-decoration:none;}
+.pdf-img img{width: 40%;display: block;text-align: center;margin: 0 auto;}
+.pdf-img span{display:none;}
+.pdf-img span.btn {padding: 0px !important;border-radius: 8px; padding: 10px;height: 28px; line-height: 28px;}
+.pdf-img:hover span {display: block; text-align: center; font-size: 12px; text-transform: uppercase; font-weight: bold; position: absolute; top: 30px;left: 24px; /* font-size: 10px; */}
+.col-img-all.images-view.img-active {border: 3px solid #8dc6d3;}
+/*orderprocess page css 22-11-2022 end*/
+
 /*ui enhancement 2.6 css start*/
 .theme_table thead tr th {white-space: inherit !important;}
 .theme_table tbody tr td {white-space: nowrap;}

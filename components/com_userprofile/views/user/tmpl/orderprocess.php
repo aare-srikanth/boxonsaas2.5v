@@ -129,32 +129,10 @@
   <!--AWtfHhqYZGWNVk9j2-hMYDuV_zW7fVNtc9UM51e7ZnmaAu4SdjTgt9R2hFGxMUhfCb6Rlga4Li5MHBI5 -- Iblesoft  -->
   <!--Afn_T4BjyFQOXFwJxZ4U3WlGajRi3_3c6yeUOtehsSL0S31S1wstR147TtNDYTOSRUZObfJsoaSf79MZ -- kupiglobal -->
 <style>
-.chg-address {display: inline-block;clear: both;}
-.expand_items.btn.btn-success:focus, .expand_items.btn.btn-success:active{outline: 0; outline-offset: 0;}
-.selinpt-chk{    margin: -1px 5px 0 8px !important;vertical-align: middle;width: 24px;height: 24px;border-radius: 8px;}
-.chk-boxfld .selinpt-chksub {width: 18px;height:24px;}
-.col-img-all {float: left;width: 25%;padding: 10px;border: 1px solid;}
-.pdf-view {position: relative;}
-/* Style the images inside the grid */
-.col-img-all img {opacity: 0.8; cursor: pointer; height: 70px;}
-.col-img-all img:hover {opacity: 1;}
-/* Clear floats after the columns */
 #viewImage .row:after {content: "";display: table;clear: both;}
 /* The expanding image container */
-.mult-img-container {position: relative;display: none;margin-top:30px;}
 /* Expanding image text */
 #imgalttext {position: absolute;bottom: 15px;left: 15px;color: white;font-size: 20px;}
-.pdf-img{text-decoration:none;}
-.pdf-img img{width: 40%;display: block;text-align: center;margin: 0 auto;}
-.pdf-img span{display:none;}
-.pdf-img span.btn {padding: 0px !important;border-radius: 8px;padding: 10px;height: 28px;line-height: 28px;}
-.pdf-img:hover span {display: block;text-align: center;font-size: 12px;text-transform: uppercase;font-weight: bold;position: absolute;top: 30px;left: 24px;/* font-size: 10px; */}
-.col-img-all.images-view.img-active {border: 3px solid #8dc6d3;}
-@media (max-width: 767px){
-.pdf-img:hover span {padding: 0;display: block;text-align: center;font-size: 10px;text-transform: uppercase;font-weight: bold;position: absolute;top: 34px;left: 3px;/* padding: 4px !important; *//* font-size: 10px; */}
-.pdf-img span.btn {padding: 1px 0px 0px 0 !important;border-radius: 8px;padding: 10px;height: 23px;line-height: 22px;/* width: 8px; */min-width: 81px;/* margin: -1px; */}}
-
-
 </style>
 <!-- 
    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
